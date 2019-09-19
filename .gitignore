@@ -158,3 +158,4 @@ pip-selfcheck.json
 # End of https://www.gitignore.io/api/linux,python,virtualenv
 
 .xlsx
+/GUI/generated_file/VSM10 20-September-2019 01:08 15 pcs.xlsx
