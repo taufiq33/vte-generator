@@ -1,0 +1,13 @@
+1. bukak CMD
+2. pip install PyQt5 (enter)
+tunggu selesai
+
+3. extrak VTE-generator-py.zip ke folder mana sak-sake (misal di D:\VTE-generator-py
+4. bukak CMD 
+5. ketik D: (enter)
+6. ketik cd VTE-generator-py (enter)
+7. ketik dir (enter)
+8. kalau ada tulisan runner.py brrti siap dijalankan
+9. python runner.py (enter) utk jalankan aplikasi
+
+jangan lupa set folder dl via pengaturan
