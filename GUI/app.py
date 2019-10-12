@@ -16,6 +16,11 @@ def getPathConfig():
     query = "SELECT generated_file_path FROM config WHERE id=1"
     return dbCursor.execute(query).fetchone()[0]
 
+def updateConfig():
+    query = "UPDATE config SET kadaluarsa=? , generated_file_path=? WHERE id=1"
+    dbCursor.execute(query)
+    return True
+
 
 class ExcelFile():
     """Kelas utama file excel yang akan di generate"""
