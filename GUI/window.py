@@ -5,6 +5,7 @@ from PyQt5.QtWidgets import *
 from settingWindow import *
 
 
+
 class mainWindowApp(QMainWindow) :
     def __init__(self):
         super().__init__()
@@ -47,7 +48,7 @@ class mainWindowApp(QMainWindow) :
         self.windowWidget.setLayout(self.windowWidget.mainAppLayout)
 
 
-        self.statusBar().showMessage("Folder File : %s\n Setting Kadaluarsa : %s" % (config.generated_file_path, config.kadaluarsa))
+        self.statusBar().showMessage("Folder File : %s\n Setting Kadaluarsa : %s" % (getPathConfig(), getKadaluarsaConfig()))
         self.windowWidget.btnCreateFile.clicked.connect(self.createFileAction)
         self.windowWidget.btnPengaturan.clicked.connect(self.settingAction)
 
