@@ -1,7 +1,7 @@
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
-import config
+import app
 import os
 
 class settingWindow(QDialog) :
@@ -27,8 +27,8 @@ class settingWindow(QDialog) :
         self.btnPilihFolder = QPushButton('Ubah Folder >>')
         self.helpKadaluarsa = QLabel("bulan/tanggal/tahun jam:menit:detik")
         self.helpFolder = QLabel("Folder tempat file akan disimpan")
-        self.folderFileInput.setText(config.generated_file_path)
-        self.kadaluarsaInput.setText(config.kadaluarsa)
+        self.folderFileInput.setText(app.getPathConfig)
+        self.kadaluarsaInput.setText(app.getKadaluarsaConfig)
 
 
         self.formLayout.addWidget(self.kadaluarsaLabel,0, 0)

@@ -3,7 +3,19 @@
 import xlsxwriter
 import time
 import datetime
-import config
+import sqlite3
+
+dbObject = sqlite3.connect('config-db.db')
+dbCursor = dbObject.cursor()
+
+def getKadaluarsaConfig():
+    query = "SELECT kadaluarsa FROM config WHERE id=1"
+    return dbCursor.execute(query).fetchone()[0]
+
+def getPathConfig():
+    query = "SELECT generated_file_path FROM config WHERE id=1"
+    return dbCursor.execute(query).fetchone()[0]
+
 
 class ExcelFile():
     """Kelas utama file excel yang akan di generate"""
@@ -14,8 +26,8 @@ class ExcelFile():
         self.jumlah = jumlah
         self.tanggalwaktu = time.strftime('%m/%d/%Y %H:%M', time.localtime(time.time()))
         self.tanggalwaktuFile = time.strftime('%d-%B-%Y %H%M', time.localtime(time.time()))
-        self.kadaluarsa = config.kadaluarsa
-        self.folder = config.generated_file_path
+        self.kadaluarsa = getKadaluarsaConfig()
+        self.folder = getPathConfig()
         self.ObjExcelFile = xlsxwriter.Workbook(self.folder + self.getNamaFile())
         self.worksheet = self.ObjExcelFile.add_worksheet()
 
