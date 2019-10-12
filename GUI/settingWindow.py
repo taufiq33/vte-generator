@@ -27,8 +27,8 @@ class settingWindow(QDialog) :
         self.btnPilihFolder = QPushButton('Ubah Folder >>')
         self.helpKadaluarsa = QLabel("bulan/tanggal/tahun jam:menit:detik")
         self.helpFolder = QLabel("Folder tempat file akan disimpan")
-        self.folderFileInput.setText(app.getPathConfig)
-        self.kadaluarsaInput.setText(app.getKadaluarsaConfig)
+        self.folderFileInput.setText(app.getPathConfig())
+        self.kadaluarsaInput.setText(app.getKadaluarsaConfig())
 
 
         self.formLayout.addWidget(self.kadaluarsaLabel,0, 0)
