@@ -13,7 +13,7 @@ class ExcelFile():
         self.deskripsi = deskripsi.upper()
         self.jumlah = jumlah
         self.tanggalwaktu = time.strftime('%m/%d/%Y %H:%M', time.localtime(time.time()))
-        self.tanggalwaktuFile = time.strftime('%d-%B-%Y %H:%M', time.localtime(time.time()))
+        self.tanggalwaktuFile = time.strftime('%d-%B-%Y %H%M', time.localtime(time.time()))
         self.kadaluarsa = config.kadaluarsa
         self.folder = config.generated_file_path
         self.ObjExcelFile = xlsxwriter.Workbook(self.folder + self.getNamaFile())
