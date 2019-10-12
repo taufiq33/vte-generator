@@ -62,12 +62,19 @@ class settingWindow(QDialog) :
             )
             self.close()
             return
-        f = open('config.py', 'w')
-        setting = """generated_file_path = '%s'\nkadaluarsa = '%s'
-        """ % (self.folderFileInput.text(), self.kadaluarsaInput.text())
-        if f.write(setting) :
-            QMessageBox.information(self, 'Simpan Pengaturan Berhasil',
-            'Pengaturan Berhasil disimpan juragan, silahkan tutup aplikasi dan buka kembali utk mengaplikasikan pengaturan barunya!!!'
+        # f = open('config.py', 'w')
+        # setting = """generated_file_path = '%s'\nkadaluarsa = '%s'
+        # """ % (self.folderFileInput.text(), self.kadaluarsaInput.text())
+        # if f.write(setting) :
+        #     QMessageBox.information(self, 'Simpan Pengaturan Berhasil',
+        #     'Pengaturan Berhasil disimpan juragan, silahkan tutup aplikasi dan buka kembali utk mengaplikasikan pengaturan barunya!!!'
+        #     )
+        # f.close()
+        folder = self.folderFileInput.text()
+        kadaluarsa = self.kadaluarsaInput.text()
+
+        if app.updateConfig(kadaluarsa, folder) :
+            QMessageBox.information(self, "Simpan Pengaturan Berhasil!",
+            "Pengaturan Berhasil disimpan , silahkan tutup aplikasi dan buka kembali utk mengaplikasikan pengaturan baru.."
             )
-        f.close()
         self.close()

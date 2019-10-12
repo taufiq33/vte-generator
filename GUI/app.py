@@ -16,9 +16,10 @@ def getPathConfig():
     query = "SELECT generated_file_path FROM config WHERE id=1"
     return dbCursor.execute(query).fetchone()[0]
 
-def updateConfig():
+def updateConfig(kadaluarsa, folder):
     query = "UPDATE config SET kadaluarsa=? , generated_file_path=? WHERE id=1"
-    dbCursor.execute(query)
+    dbCursor.execute(query, (kadaluarsa, folder))
+    dbObject.commit()
     return True
 
 
