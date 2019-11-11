@@ -1,3 +1,0 @@
-##backup config
-generated_file_path = 'generated_file/'
-kadaluarsa = "12/27/2030 22:44:03"
