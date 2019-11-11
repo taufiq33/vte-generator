@@ -3,3 +3,4 @@
 FOLDERBARUOM/
 *.pyc
 *.db
+GUI/config-db.db
