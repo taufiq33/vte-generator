@@ -27,7 +27,13 @@ class ExcelFile():
     """Kelas utama file excel yang akan di generate"""
 
     def __init__(self, kodeproduk, deskripsi, jumlah):
-        self.kodeproduk = kodeproduk.upper()
+        if ',' in kodeproduk :
+            pecah = kodeproduk.upper().split(',')
+            self.kodeproduk = pecah[0]
+            self.kodeprodukfile = f"{pecah[0]} {pecah[1]}"
+        else : 
+            self.kodeproduk = kodeproduk.upper()
+            self.kodeprodukfile = kodeproduk.upper()
         self.deskripsi = deskripsi.upper()
         self.jumlah = jumlah
         self.tanggalwaktu = time.strftime('%m/%d/%Y %H:%M', time.localtime(time.time()))
@@ -38,7 +44,7 @@ class ExcelFile():
         self.worksheet = self.ObjExcelFile.add_worksheet()
 
     def getNamaFile(self) :
-        namafile = "%s %s %s pcs.xlsx" % (self.kodeproduk, self.tanggalwaktuFile, self.jumlah)
+        namafile = "%s %s %s pcs.xlsx" % (self.kodeprodukfile, self.tanggalwaktuFile, self.jumlah)
         return namafile
 
     def generateExcelFile(self) :
