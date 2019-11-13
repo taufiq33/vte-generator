@@ -1,0 +1,17 @@
+altgraph==0.16.1
+certifi==2019.9.11
+chardet==3.0.4
+docutils==0.15.2
+et-xmlfile==1.0.1
+idna==2.8
+jdcal==1.4.1
+Kivy==1.11.1
+Kivy-Garden==0.1.4
+pkg-resources==0.0.0
+Pygments==2.4.2
+PyInstaller==3.5
+PyQt5==5.13.1
+PyQt5-sip==4.19.19
+requests==2.22.0
+urllib3==1.25.6
+XlsxWriter==1.2.1
